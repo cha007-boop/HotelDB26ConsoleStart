@@ -1,0 +1,44 @@
+﻿@page
+@model RazorHotelDB26.Pages.Rooms.GetAllRoomsModel
+@{
+    ViewData["Title"] = "GetAllRooms";
+}
+
+<h4 style="color:aquamarine"> List of rooms in hotel @Model.TheHotelNo</h4>
+
+<a asp-page="/Hotels/GetAllHotels">back to hotels</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Room no
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.MyRooms.Count() != 0)
+        {
+            @foreach (var item in Model.MyRooms)
+            {
+                <tr>
+                    <td>
+                        @item.RoomNr
+                    </td>
+                    <td>
+                        @item.Types
+                    </td>
+                    <td>
+                        @item.Pris
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-       @*  @if (Model.Hotels.Count() != 0)
+        @if (Model.Hotels.Count() != 0)
         {
             @foreach (var item in Model.Hotels)
             {
@@ -40,12 +40,12 @@
                         <p>
                             <a asp-page="/Hotels/Delete" asp-route-hotelnr="@item.HotelNr">Delete</a>|
                             <a asp-page="/Hotels/Edit" asp-route-hotelnr="@item.HotelNr">Edit</a>|
-                            <a asp-page="/Rooms/Create" asp-route-id="@item.HotelNr">Create new room</a>|
+                            <a asp-page="/Rooms/Create" asp-route-hotelnr="@item.HotelNr">Create new room</a>|
                             <a asp-page="/Rooms/GetAllRooms" asp-page-handler="MyRooms" asp-route-cid="@item.HotelNr">Rooms in hotel</a>
                         </p>
                     </td>
                 </tr>
-            } *@
+            }
         }
     </tbody>
 </table>

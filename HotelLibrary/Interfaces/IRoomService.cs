@@ -9,12 +9,14 @@ namespace HotelLibrary.Interfaces
 {
     public interface IRoomService
     {
+        List<Room> GetAllRooms();
+
         /// <summary>
         /// henter alle værelser til et hotel fra databasen
         /// </summary>
         /// <param name="hotelNr">Nummeret på hotellet</param>
         /// <returns>Liste af værelser</returns>
-        List<Room> GetAllRoom(int hotelNr);
+        List<Room> GetAllRoomsByHotel(int hotelNr);
 
         /// <summary>
         /// Henter et specifik værelse fra database 
@@ -28,9 +30,8 @@ namespace HotelLibrary.Interfaces
         /// Indsætter et ny værelse i databasen
         /// </summary>
         /// <param name="room">Værelset der skal indsættes</param>
-        /// <param name="hotelNr">Nummeret på hotellet</param>
         /// <returns>Sand hvis der er gået godt ellers falsk</returns>
-        bool CreateRoom(int hotelNr, Room room);
+        bool CreateRoom(Room room);
 
         /// <summary>
         /// Opdaterer en værelset i databasen

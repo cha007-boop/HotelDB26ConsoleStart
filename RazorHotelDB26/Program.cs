@@ -1,9 +1,15 @@
+using HotelLibrary.Interfaces;
+using HotelLibrary.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<IHotelServiceAsync, HotelServiceAsync>();
+builder.Services.AddTransient<IRoomService, RoomService>();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

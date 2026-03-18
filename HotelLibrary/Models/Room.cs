@@ -31,7 +31,7 @@ namespace HotelLibrary.Models
 
         public override string ToString()
         {
-            return $"Room = {RoomNr}, Types = {Types}, Pris = {Pris}";
+            return $"Room = {RoomNr},{(HotelNr != 0 ? $" Hotel = {HotelNr}," : "")} Types = {Types}, Pris = {Pris}";
         }
     }
 }
